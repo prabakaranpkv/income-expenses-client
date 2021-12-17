@@ -36,7 +36,7 @@ const AddIncome = () => {
 
   //Redirect
   useEffect(() => {
-    if (isIncCreated) history.push("/incomes");
+    if (isIncCreated) history.push("/user-income");
   }, [isIncCreated, dispatch]);
   return (
     <>

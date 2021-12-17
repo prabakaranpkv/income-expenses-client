@@ -62,7 +62,7 @@ const DashboardData = () => {
                   </div>
                   <h1 class="mb-4">
                     {currencyFormatter(
-                      "USD",
+                      "INR",
                       accountDetails?.expenseStats[0]?.totalExp
                     )}
                   </h1>
@@ -112,7 +112,7 @@ const DashboardData = () => {
                   </div>
                   <h1 class="mb-4">
                     {currencyFormatter(
-                      "USD",
+                      "INR",
                       accountDetails?.incomeStats[0]?.totalIncome
                     )}
                   </h1>

@@ -36,11 +36,8 @@ const ExpensesList = () => {
               <div className="pt-8 px-8 mb-8">
                 <h6 className="mb-0 fs-3">Recent Expense transactions</h6>
                 <p className="mb-0">
-                  Below is the history of your expense transactions records
+                  Below is the history of All expense transactions records
                 </p>
-                <Link to="/" className="btn  btn-outline-danger me-2 m-2">
-                  New Expense
-                </Link>
               </div>
               <table className="table">
                 <thead>
@@ -68,11 +65,6 @@ const ExpensesList = () => {
                     <th scope="col">
                       <button className="btn d-flex align-items-centerr text-uppercase">
                         <small>Date</small>
-                      </button>
-                    </th>
-                    <th scope="col">
-                      <button className="btn d-flex align-items-centerr text-uppercase">
-                        <small>Action</small>
                       </button>
                     </th>
                   </tr>

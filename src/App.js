@@ -24,8 +24,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <ProtectedRoute exact path="/expenses" component={ExpensesList} />
-        <ProtectedRoute exact path="/incomes" component={IncomeList} />
+        <AdminRoute exact path="/expenses" component={ExpensesList} />
+        <AdminRoute exact path="/incomes" component={IncomeList} />
         <ProtectedRoute exact path="/edit" component={EditContent} />
         <ProtectedRoute
           exact
@@ -42,7 +42,7 @@ function App() {
           path="/user-income"
           component={UserProfileIncList}
         />
-        <ProtectedRoute exact path="/dashboard" component={DashboardData} />
+        <AdminRoute exact path="/dashboard" component={DashboardData} />
         <Route exact path="/not-found" component={NotAdmin} />
         <ProtectedRoute exact path="/add-income" component={AddIncome} />
         <ProtectedRoute exact path="/add-expense" component={AddExpense} />

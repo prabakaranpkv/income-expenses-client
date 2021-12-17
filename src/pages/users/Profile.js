@@ -46,15 +46,22 @@ const Profile = () => {
                 <div>
                   <h6 className="fw-bold mb-0">
                     <span>
-                      {profile?.firstname} {profile?.lastname}
+                      User : {profile?.firstname} {profile?.lastname}
                     </span>
                     <span className="badge ms-2 bg-primary-light text-primary">
                       {profile?.expenses?.length + profile?.income?.length} {""}
                       Records Created
                     </span>
                   </h6>
-                  <p className="mb-0">{profile?.email}</p>
-                  <p className="mb-0">Date Joined: 12-Jan-1999</p>
+                  <p className="mb-0">Email : {profile?.email}</p>
+                  <p className="mb-0">
+                    Date Joined:{" "}
+                    {new Date(profile?.createdAt).getDate() +
+                      "-" +
+                      new Date(profile?.createdAt).getMonth() +
+                      "-" +
+                      new Date(profile?.createdAt).getFullYear()}
+                  </p>
                   <button
                     onClick={() =>
                       history.push({
@@ -64,15 +71,16 @@ const Profile = () => {
                         },
                       })
                     }
-                    className="btn"
+                    className="btn text-danger "
                   >
                     Edit Profile
                     <i class="bi bi-pen fs-3 m-3 text-primary"></i>
                   </button>
                 </div>
+
                 <GraphDtata
                   income={incResult?.sumTotal}
-                  expenses={incResult?.sumTotal}
+                  expense={expResult?.sumTotal}
                 />
               </div>
 

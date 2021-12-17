@@ -37,7 +37,7 @@ const AddExpense = (props) => {
 
   //Redirect
   useEffect(() => {
-    if (isExpCreated) history.push("/expenses");
+    if (isExpCreated) history.push("/user-expenses");
   }, [isExpCreated, dispatch]);
   return (
     <>

@@ -57,7 +57,7 @@ export const fetchAllIncomeAction = createAsyncThunk(
   }
 );
 
-//Create action
+//update action
 export const updateIncomeAction = createAsyncThunk(
   "income/update",
   async (payload, { rejectWithValue, getState, dispatch }) => {
@@ -76,6 +76,7 @@ export const updateIncomeAction = createAsyncThunk(
         payload,
         config
       );
+
       return data;
     } catch (error) {
       if (!error?.response) {
@@ -96,7 +97,7 @@ const incomeSlices = createSlice({
       state.loading = true;
     });
     //reset action
-    builder.addCase(resetIncCreated, (state, acyion) => {
+    builder.addCase(resetIncCreated, (state, action) => {
       state.isIncCreated = true;
     });
     builder.addCase(createIncomeAction.fulfilled, (state, action) => {
@@ -130,21 +131,21 @@ const incomeSlices = createSlice({
 
     //   update Expense
     builder.addCase(updateIncomeAction.pending, (state, action) => {
-      state.loading = true;
+      state.iloading = true;
     });
     //reset action
-    builder.addCase(resetIncUpdate, (state, acyion) => {
+    builder.addCase(resetIncUpdate, (state, action) => {
       state.isIncUpdated = true;
     });
     builder.addCase(updateIncomeAction.fulfilled, (state, action) => {
-      state.loading = false;
+      state.iloading = false;
       state.incomeUpdated = action?.payload;
       state.appErr = undefined;
       state.serverErr = undefined;
       state.isIncUpdated = false;
     });
     builder.addCase(updateIncomeAction.rejected, (state, action) => {
-      state.loading = false;
+      state.iloading = false;
       state.appErr = action?.payload?.msg;
       state.serverErr = action?.error?.msg;
     });

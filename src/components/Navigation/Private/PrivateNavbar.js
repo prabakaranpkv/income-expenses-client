@@ -28,13 +28,13 @@ const PrivateNavbar = () => {
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <Link to="/expenses" className="nav-link active">
-                  Expenses List
+                  All Expenses List
                 </Link>
               </li>
 
               <li class="nav-item">
                 <Link to="/incomes" className="nav-link active">
-                  Income List
+                  All Income List
                 </Link>
               </li>
 

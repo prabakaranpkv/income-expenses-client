@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import DisabledButton from "./DisabledButton";
 import { updateExpAction } from "../redux/slices/expenses/expensesSlices";
@@ -40,17 +41,26 @@ const EditContent = ({
     },
     validationSchema: formSchema,
   });
+  const history = useHistory();
 
   //get data form store
 
   const expenseData = useSelector((state) => state.expenses);
+  const incomeData = useSelector((state) => state.income);
+
   const { appErr, serverErr, expenseUpdated, loading } = expenseData;
-  console.log(expenseData);
+  const { iloading } = incomeData;
+
   return (
     <section className="py-5 bg-secondary vh-100">
       <div className="container text-center">
         <a className="d-inline-block mb-5">
-          <img className="img-fluid" src="" alt="SVGeXPENSES" width="200" />
+          <img
+            className="img-fluid"
+            src="https://starpng.com/public/uploads/preview/money-transparent-background-101576255241pwfahywtn0.png"
+            alt="update"
+            width="200"
+          />
         </a>
 
         <div className="row mb-4">
@@ -59,7 +69,7 @@ const EditContent = ({
               <form onSubmit={formik.handleSubmit}>
                 <span className="text-muted"></span>
                 {/* Display Err */}
-                {appErr || serverErr ? <div>Err</div> : null}
+                {appErr || serverErr ? <div>Error</div> : null}
                 {item?.type === "income" ? (
                   <h2>Update Income</h2>
                 ) : (
@@ -115,6 +125,8 @@ const EditContent = ({
                   </button>
                 )}
               </form>
+              {loading ? history.push("/user-expenses") : null}
+              {iloading ? history.push("/user-income") : null}
             </div>
           </div>
         </div>

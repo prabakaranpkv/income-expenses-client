@@ -58,7 +58,7 @@ export const fetchAllExpAction = createAsyncThunk(
   }
 );
 
-//Create action
+//Update action
 export const updateExpAction = createAsyncThunk(
   "expense/update",
   async (payload, { rejectWithValue, getState, dispatch }) => {
@@ -98,7 +98,7 @@ const expenseSlices = createSlice({
       state.loading = true;
     });
     //reset action
-    builder.addCase(resetExpCreated, (state, acyion) => {
+    builder.addCase(resetExpCreated, (state, action) => {
       state.isExpCreated = true;
     });
     builder.addCase(createExpAction.fulfilled, (state, action) => {

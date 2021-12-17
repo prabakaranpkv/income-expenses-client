@@ -108,6 +108,12 @@ const Login = () => {
                     </button>
                   )}
                 </div>
+                <h5>UserId & Password for Demo</h5>
+                <p>Email : user@gmail.com</p>
+                <p>Password: 12345</p>
+                <h5>Admin</h5>
+                <p>Email : admin@gmail.com</p>
+                <p>Password: 12345</p>
               </form>
             </div>
           </div>

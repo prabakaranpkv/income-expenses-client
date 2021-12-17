@@ -27,7 +27,7 @@ const UserProfileStats = ({
                 {/* Expenses Start */}
                 <span class="badge bg-light fs-2 text-primary">Expenses</span>
               </div>
-              <h1 class="mb-4">{currencyFormatter("USD", totalExp)}</h1>
+              <h1 class="mb-4">{currencyFormatter("INR", totalExp)}</h1>
               <p class="mb-0">
                 <span>Number of Transactions</span>
                 <span class="text-danger ms-1">
@@ -70,7 +70,7 @@ const UserProfileStats = ({
                   Income Transactions
                 </span>
               </div>
-              <h1 class="mb-4 p-2">{currencyFormatter("USD", totalInc)}</h1>
+              <h1 class="mb-4 p-2">{currencyFormatter("INR", totalInc)}</h1>
 
               <p class="mb-0">
                 <span>Number of Transactions</span>

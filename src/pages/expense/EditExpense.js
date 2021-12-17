@@ -2,7 +2,6 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import moneySVG from "../../img/money.svg";
 import { updateExpAction } from "../../redux/slices/expenses/expensesSlices";
 import DisabledButton from "../../components/DisabledButton";
 
@@ -48,8 +47,8 @@ const EditExpense = ({
         <a className="d-inline-block mb-5">
           <img
             className="img-fluid"
-            src={moneySVG}
-            alt="SVGeXPENSES"
+            src="https://starpng.com/public/uploads/preview/money-transparent-background-101576255241pwfahywtn0.png"
+            alt="update"
             width="200"
           />
         </a>
